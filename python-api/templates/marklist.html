@@ -1,0 +1,29 @@
+<html>
+<body>
+   <table border=1>
+      <thead> 
+         <tr>
+            <th>Student ID</th> <th>Student Name</th>
+            <th>percentage</th>
+            <th>Result</th>
+         </tr> 
+      </thead>
+      <tbody>
+         {% for Student in students %}
+            <tr> 
+               <td>{{ Student.id }}</td> 
+               <td>{{ Student.name }}</td>
+               <td>{{ Student.percent }}</td>
+               <td>
+                  {% if Student.percent>=50 %}
+                  Pass
+                  {% else %}
+                  Fail
+                  {% endif %}
+               </td> 
+            </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+</body>
+</html>
